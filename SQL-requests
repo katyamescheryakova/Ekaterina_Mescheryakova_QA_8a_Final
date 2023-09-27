@@ -1,3 +1,5 @@
+#Запрос 1. Выводит список логинов курьеров с количеством их заказов в статусе «В доставке»
+
 SELECT cour.login, 
 COUNT(ord.id) AS "Количество заказов в доставке"
 FROM "Couriers" AS cour
@@ -5,6 +7,7 @@ LEFT JOIN "Orders" AS ord ON cour.id = ord."courierId"
 WHERE ord."inDelivery" = true
 GROUP BY cour.login;
 
+#Запрос 2. Выводит все трекеры заказов и их статусы
 
 SELECT track,
     CASE
